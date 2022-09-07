@@ -1,12 +1,14 @@
 import React from "react";
 
-interface Props {}
+const footerYear: number = new Date().getFullYear();
 
-const Footer = ({}: Props): JSX.Element => {
+const Footer = (): JSX.Element => {
   return (
-    <>
-      <h3>FOOTER</h3>
-    </>
+    <footer className="flex justify-center items-center bg-neutral-100 p-5">
+      <p className="text-sm">
+        Copyright &copy; {footerYear} All rights reserved
+      </p>
+    </footer>
   );
 };
 

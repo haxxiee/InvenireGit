@@ -9,11 +9,11 @@ interface Props {
 
 const Layout = ({ children }: Props): JSX.Element => {
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       <Navbar />
-      <main>{children}</main>
+      {children}
       <Footer />
-    </>
+    </div>
   );
 };
 
