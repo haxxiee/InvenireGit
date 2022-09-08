@@ -6,17 +6,18 @@ const title: string = "InvenireGit";
 const Navbar = (): JSX.Element => {
   return (
     <nav className="fixed w-full top-0 left-0 z-10 bg-transparent">
-      <div className="flex justify-center items-center p-3 my-5">
+      {/* <div className="flex justify-between mx-auto max-w-4xl"> */}
+      <div className="flex justify-between items-center mx-auto max-w-7xl p-3 my-5">
         <div className="text-2xl ml-2 font-bold">{title}</div>
         <ul className="flex mx-auto mr-2 [&>*]:px-4 ">
           <li>
             <Link href="/">
-              <a className="mx-2 font-bold">HOME</a>
+              <a className="font-bold">HOME</a>
             </Link>
           </li>
           <li>
             <Link href="/about">
-              <a className="mx-2 font-bold">ABOUT</a>
+              <a className="font-bold">ABOUT</a>
             </Link>
           </li>
         </ul>
@@ -34,6 +35,7 @@ const Navbar = (): JSX.Element => {
           </svg>
         </button>
       </div>
+      {/* </div> */}
     </nav>
   );
 };
