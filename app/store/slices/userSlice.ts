@@ -1,32 +1,38 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { HYDRATE } from "next-redux-wrapper";
+import { getUsers } from "../actions/userAction";
+
+export type userState = {
+  users: [];
+  pending: boolean;
+  error: boolean;
+};
+
+const initialState: userState = {
+  users: [],
+  pending: false,
+  error: false,
+};
 
 export const userSlice = createSlice({
   name: "users",
 
-  initialState: {
-    users: [
-      {
-        name: "Banan",
-        lastname: "Svennne",
-      },
-    ],
-  },
+  initialState,
+  reducers: {},
 
-  reducers: {
-    setUsers: (state, action) => {
-      state.users = action.payload;
-    },
-  },
-
-  extraReducers: {
-    [HYDRATE]: (state, action) => {
-      // TODO - handle client side state override
-      state.users = action.payload.users.users;
-    },
+  extraReducers: (builder) => {
+    builder
+      .addCase(getUsers.pending, (state) => {
+        state.pending = true;
+      })
+      .addCase(getUsers.fulfilled, (state, { payload }) => {
+        state.pending = false;
+        state.users = payload;
+      })
+      .addCase(getUsers.rejected, (state) => {
+        state.pending = false;
+        state.error = true;
+      });
   },
 });
-
-export const { setUsers } = userSlice.actions;
 
 export default userSlice.reducer;
