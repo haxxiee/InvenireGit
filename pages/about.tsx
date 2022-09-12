@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 
 const About: NextPage = () => {
   return (
-    <main className="flex flex-col justify-center items-center my-auto">
+    <main className="flex flex-col justify-center items-center my-auto text-center">
       <h1 className="text-6xl font-semibold p-4">InvenireGit</h1>
       <p className="text-xl">
         A NextJS app to search GitHub profile and see profile details.

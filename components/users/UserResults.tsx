@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { getUsers } from "../../app/store/actions/userAction";
+import { removeAllUsers } from "../../app/store/slices/userSlice";
 
 const UserResults = (): JSX.Element => {
   const dispatch = useAppDispatch();
@@ -11,6 +12,9 @@ const UserResults = (): JSX.Element => {
       <div>
         <button className="border" onClick={() => dispatch(getUsers("juan"))}>
           CLICK ME
+        </button>
+        <button className="border" onClick={() => dispatch(removeAllUsers())}>
+          CLEARINGTEST
         </button>
         {pending && <p>Loading...</p>}
         {users.map((user: any) => (
