@@ -1,7 +1,7 @@
-import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { getUsers } from "../../app/store/actions/userAction";
 import { removeAllUsers } from "../../app/store/slices/userSlice";
+import UserItem from "./UserItem";
 
 const UserResults = (): JSX.Element => {
   const dispatch = useAppDispatch();
@@ -47,7 +47,7 @@ const UserResults = (): JSX.Element => {
 
       <div className="grid grid-cols-1 gap-10 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 mt-4">
         {users.map((user: any) => (
-          <p key={user.id}>{user.login}</p>
+          <UserItem key={user.id} user={user} />
         ))}
       </div>
     </div>
