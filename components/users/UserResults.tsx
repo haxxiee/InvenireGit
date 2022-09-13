@@ -8,7 +8,7 @@ const UserResults = (): JSX.Element => {
   const { users, pending } = useAppSelector((state) => state.users);
 
   return (
-    <div className="flex flex-col justify-center items-center">
+    <div className="flex flex-col justify-center items-center mb-10">
       <div>
         <button
           className="border m-2"
@@ -27,7 +27,7 @@ const UserResults = (): JSX.Element => {
       {pending && (
         <div role="status">
           <svg
-            className="inline mr-2 w-10 h-10 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
+            className="inline mr-2 w-10 h-10 text-gray-300 animate-spin dark:text-gray-600 fill-indigo-600"
             viewBox="0 0 100 101"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
