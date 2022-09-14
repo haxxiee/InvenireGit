@@ -10,16 +10,10 @@ const UserResults = (): JSX.Element => {
   return (
     <div className="flex flex-col justify-center items-center mb-10">
       <div>
-        <button
-          className="border m-2"
-          onClick={() => dispatch(getUsers("haxx"))}
-        >
+        <button className="m-2" onClick={() => dispatch(getUsers("haxx"))}>
           CLICK ME
         </button>
-        <button
-          className="border m-2 "
-          onClick={() => dispatch(removeAllUsers())}
-        >
+        <button className="m-2 " onClick={() => dispatch(removeAllUsers())}>
           CLEARINGTEST
         </button>
       </div>

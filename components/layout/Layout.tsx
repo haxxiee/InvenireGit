@@ -9,7 +9,7 @@ interface Props {
 
 const Layout = ({ children }: Props): JSX.Element => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen dark:bg-gray-900">
       <Navbar />
       {children}
       <Footer />
