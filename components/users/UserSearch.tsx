@@ -35,7 +35,7 @@ const UserSearch = (): JSX.Element => {
       <div className="container flex justify-center items-center px-4 sm:px-6 lg:px-8 mt-4">
         <input
           type="text"
-          className="h-14 w-96 pr-8 pl-5 rounded z-0 focus:shadow-lg shadow-md focus:outline-none dark:bg-gray-800"
+          className="h-14 w-96 pr-8 pl-5 rounded z-0 shadow-md focus:outline-none dark:bg-gray-800"
           placeholder="Search profile..."
           value={text}
           onChange={handleChange}
