@@ -8,7 +8,7 @@ const Home: NextPage = () => {
       <h3 className="text-6xl p-3">Welcome!</h3>
       <div className="flex flex-col">
         <h3>
-          Search for whatever user you want to find on{" "}
+          Search for whatever profile you want to find on{" "}
           <span className="bg-indigo-200 dark:bg-indigo-900 rounded-sm">
             <a href="https://github.com/" target="_blank" rel="noreferrer">
               Github!
