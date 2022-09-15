@@ -15,13 +15,10 @@ const Navbar = (): JSX.Element => {
   return (
     <nav className="fixed w-full top-0 left-0 z-10 bg-transparent dark:text-gray-300">
       <div className="flex justify-between items-center mx-auto max-w-7xl p-3 my-5">
-        <div className="text-2xl ml-2 font-bold">{title}</div>
+        <Link href="/">
+          <a className="text-2xl ml-2 font-bold">{title}</a>
+        </Link>
         <ul className="flex mx-auto mr-2 [&>*]:px-4 ">
-          <li>
-            <Link href="/">
-              <a className="font-semibold">HOME</a>
-            </Link>
-          </li>
           <li>
             <Link href="/about">
               <a className="font-semibold">ABOUT</a>

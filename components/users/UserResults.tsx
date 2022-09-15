@@ -1,6 +1,4 @@
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { getUsers } from "../../app/store/actions/userAction";
-import { removeAllUsers } from "../../app/store/slices/userSlice";
 import UserItem from "./UserItem";
 
 const UserResults = (): JSX.Element => {
@@ -9,17 +7,8 @@ const UserResults = (): JSX.Element => {
 
   return (
     <div className="flex flex-col justify-center items-center mb-10">
-      <div>
-        <button className="m-2" onClick={() => dispatch(getUsers("haxx"))}>
-          CLICK ME
-        </button>
-        <button className="m-2 " onClick={() => dispatch(removeAllUsers())}>
-          CLEARINGTEST
-        </button>
-      </div>
-
       {pending && (
-        <div role="status">
+        <div className="m-10">
           <svg
             className="inline mr-2 w-10 h-10 text-gray-300 animate-spin dark:text-gray-600 fill-indigo-600"
             viewBox="0 0 100 101"
