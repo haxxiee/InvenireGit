@@ -9,10 +9,8 @@ const UserSearch = (): JSX.Element => {
   const dispatch = useAppDispatch();
   const { users } = useAppSelector((state) => state.users);
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) =>
     setText(e.target.value);
-    console.log(e.target.value);
-  };
 
   const handleSubmit = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
