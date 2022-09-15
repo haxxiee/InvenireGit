@@ -10,7 +10,9 @@ const Home: NextPage = () => {
         <h3>
           Search for whatever user you want to find on{" "}
           <span className="bg-indigo-200 dark:bg-indigo-900">
-            <a href="www.github.com">Github!</a>
+            <a href="https://github.com/" target="_blank" rel="noreferrer">
+              Github!
+            </a>
           </span>
         </h3>
       </div>
