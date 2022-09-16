@@ -1,8 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { getUsers } from "../actions/userAction";
+import { UserObject } from "../../../types";
 
 export type userState = {
-  users: [];
+  users: UserObject[];
   pending: boolean;
   error: boolean;
 };
