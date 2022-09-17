@@ -14,7 +14,6 @@ const UserSearch = (): JSX.Element => {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(text);
 
     if (text === "") {
       alert("PlsEnter Somethoing");
@@ -39,10 +38,7 @@ const UserSearch = (): JSX.Element => {
             value={text}
             onChange={handleChange}
           />
-          <button
-            className="py-4 px-4 hover:text-indigo-600"
-            onClick={handleSubmit}
-          >
+          <button className="py-4 px-4 hover:text-indigo-600">
             <svg
               aria-hidden="true"
               data-prefix="fas"
@@ -60,7 +56,7 @@ const UserSearch = (): JSX.Element => {
           </button>
         </form>
       </div>
-      {users.length > 1 && (
+      {users.length > 0 && (
         <button
           className="py-1 px-3 m-4 font-medium rounded-md border-2 bg-transparent border-indigo-400 text-gray-600 dark:text-gray-300 dark:border-indigo-900 dark:hover:text-indigo-600 hover:text-indigo-600"
           onClick={removeButtonHandler}
