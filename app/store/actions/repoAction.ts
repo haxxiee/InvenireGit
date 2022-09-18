@@ -10,6 +10,10 @@ export const getUserRepos = createAsyncThunk(
         headers: {
           Authorization: `token ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`,
         },
+        params: {
+          sort: "created",
+          per_page: 10,
+        },
       }
     );
 
