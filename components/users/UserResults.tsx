@@ -1,8 +1,8 @@
-import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { useAppSelector } from "../../app/hooks";
 import UserItem from "./UserItem";
+import { UserObject } from "../../types";
 
 const UserResults = (): JSX.Element => {
-  const dispatch = useAppDispatch();
   const { users, pending } = useAppSelector((state) => state.users);
 
   return (
@@ -29,7 +29,7 @@ const UserResults = (): JSX.Element => {
       )}
 
       <div className="grid grid-cols-1 gap-10 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 mt-4">
-        {users.map((user: any) => (
+        {users.map((user: UserObject) => (
           <UserItem key={user.id} user={user} />
         ))}
       </div>

@@ -1,12 +1,28 @@
 import { GetServerSideProps } from "next";
 import type { NextPage } from "next";
-import { UserObject } from "../../types";
+import { useEffect } from "react";
+import { UserObject, RepoObject } from "../../types";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { removeRepos } from "../../app/store/slices/repoSlice";
+import { getUserRepos } from "../../app/store/actions/repoAction";
 
 const User: NextPage = ({ data }: any) => {
-  // console.log(data);
+  const { repos } = useAppSelector((state) => state.repos);
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(removeRepos());
+    dispatch(getUserRepos(data.login));
+  }, []);
+
   return (
     <div className="flex flex-col justify-center items-center mt-56 dark:text-gray-300">
-      <h1 className="text-2xl">UserPage {data.login}</h1>
+      <h1 className="text-2xl">{data.login}</h1>
+      <div>
+        {repos.map((repo: RepoObject) => (
+          <div key={repo.id}>{repo.name}</div>
+        ))}
+      </div>
     </div>
   );
 };

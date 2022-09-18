@@ -1,0 +1,18 @@
+import { createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
+
+export const getUserRepos = createAsyncThunk(
+  "repos/getUserRepos",
+  async (userName: string) => {
+    const response = await axios.get(
+      `https://api.github.com/users/${userName}/repos`,
+      {
+        headers: {
+          Authorization: `token ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`,
+        },
+      }
+    );
+
+    return response.data;
+  }
+);
