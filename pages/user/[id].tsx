@@ -8,6 +8,8 @@ import { UserObject, RepoObject } from "../../types";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { removeRepos } from "../../app/store/slices/repoSlice";
 import { getUserRepos } from "../../app/store/actions/repoAction";
+import UserInfoContainer from "../../components/users/UserInfo";
+import UserStatistics from "../../components/users/UserStatistics";
 
 const User: NextPage = ({ data }: any) => {
   const { repos, pending } = useAppSelector((state) => state.repos);
@@ -16,7 +18,7 @@ const User: NextPage = ({ data }: any) => {
   useEffect(() => {
     dispatch(removeRepos());
     dispatch(getUserRepos(data.login));
-  }, []);
+  }, [data.login, dispatch]);
 
   return (
     <div className="flex flex-col justify-center items-center mt-56 dark:text-gray-300">
@@ -50,54 +52,48 @@ const User: NextPage = ({ data }: any) => {
       </div>
       <div className="lg:flex md:flex text-center">
         {data.location && (
-          <div className="max-w-md py-4 px-8 bg-white shadow-lg rounded-lg m-5 dark:bg-gray-800">
-            <h1 className="font-bold">Location</h1>
-            <h2>{data.location}</h2>
-          </div>
+          <UserInfoContainer title={"Location"} subTitle={data.location} />
         )}
         {data.blog && (
-          <div className="max-w-md py-4 px-8 bg-white shadow-lg rounded-lg m-5 dark:bg-gray-800">
-            <h1 className="font-bold">Website</h1>
-            <h2>{data.blog}</h2>
-          </div>
+          <UserInfoContainer title={"Website"} subTitle={data.blog} />
         )}
         {data.twitter_username && (
-          <div className="max-w-md py-4 px-8 bg-white shadow-lg rounded-lg m-5 dark:bg-gray-800">
-            <h1 className="font-bold">Twitter</h1>
-            <h2>{data.twitter_username}</h2>
-          </div>
+          <UserInfoContainer
+            title={"Twitter"}
+            subTitle={data.twitter_username}
+          />
         )}
       </div>
 
       <div className="lg:flex md:flex max-w-4xl bg-white shadow-lg rounded-lg m-5 dark:bg-gray-800">
-        <div className="flex justify-between items-center py-3 px-8 border-b-2 md:border-b-0 md:border-r-2 dark:border-gray-900">
-          <div className="p-2 mr-4">
-            <h1 className="font-bold">Followers</h1>
-            <h2 className="text-2xl font-bold">{data.followers}</h2>
-          </div>
+        <UserStatistics
+          title={"Followers"}
+          number={data.followers}
+          border={true}
+        >
           <FaUsers className="text-2xl" />
-        </div>
-        <div className="flex justify-between items-center py-3 px-8 border-b-2 md:border-b-0 md:border-r-2 dark:border-gray-900">
-          <div className="p-2 mr-4">
-            <h1 className="font-bold">Following</h1>
-            <h2 className="text-2xl font-bold">{data.following}</h2>
-          </div>
+        </UserStatistics>
+        <UserStatistics
+          title={"Following"}
+          number={data.following}
+          border={true}
+        >
           <FaUserFriends className="text-2xl" />
-        </div>
-        <div className="flex justify-between items-center py-3 px-8 border-b-2 md:border-b-0 md:border-r-2 dark:border-gray-900">
-          <div className="p-2 mr-4">
-            <h1 className="font-bold">Public Repos</h1>
-            <h2 className="text-2xl font-bold">{data.public_repos}</h2>
-          </div>
+        </UserStatistics>
+        <UserStatistics
+          title={"Public Repos"}
+          number={data.public_repos}
+          border={true}
+        >
           <FaCodepen className="text-2xl" />
-        </div>
-        <div className="flex justify-between items-center py-3 px-8">
-          <div className="p-2 mr-4">
-            <h1 className="font-bold">Public Gists</h1>
-            <h2 className="text-2xl font-bold">{data.public_gists}</h2>
-          </div>
+        </UserStatistics>
+        <UserStatistics
+          title={"Public Gists"}
+          number={data.public_gists}
+          border={false}
+        >
           <FaStore className="text-2xl" />
-        </div>
+        </UserStatistics>
       </div>
 
       {pending && (
