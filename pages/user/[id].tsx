@@ -10,6 +10,7 @@ import { removeRepos } from "../../app/store/slices/repoSlice";
 import { getUserRepos } from "../../app/store/actions/repoAction";
 import UserInfoContainer from "../../components/users/UserInfo";
 import UserStatistics from "../../components/users/UserStatistics";
+import UserRepoItem from "../../components/users/UserRepoItem";
 
 const User: NextPage = ({ data }: any) => {
   const { repos, pending } = useAppSelector((state) => state.repos);
@@ -117,11 +118,14 @@ const User: NextPage = ({ data }: any) => {
         </div>
       )}
 
-      <div>
-        {repos.map((repo: RepoObject) => (
-          <div key={repo.id}>{repo.name}</div>
-        ))}
-      </div>
+      {!pending && (
+        <div className="max-w-4xl w-full py-4 px-8 mx-10 mt-5 bg-white shadow-lg rounded-lg dark:bg-gray-800">
+          <h1 className="text-center text-2xl font-semibold">Latest repos</h1>
+          {repos.map((repo: RepoObject) => (
+            <UserRepoItem key={repo.id} repo={repo} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

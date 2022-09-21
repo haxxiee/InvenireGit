@@ -16,7 +16,6 @@ const UserSearch = (): JSX.Element => {
     e.preventDefault();
 
     if (text === "") {
-      alert("PlsEnter Somethoing");
     } else {
       dispatch(getUsers(text));
       setText("");
@@ -33,7 +32,7 @@ const UserSearch = (): JSX.Element => {
         <form onSubmit={handleSubmit}>
           <input
             type="text"
-            className="h-14 w-96 pr-8 pl-5 rounded z-0 shadow-md focus:outline-none dark:bg-gray-800"
+            className="h-14 sm:w-96 w-72 pr-8 pl-5 rounded z-0 shadow-md focus:outline-none dark:bg-gray-800"
             placeholder="Search profile..."
             value={text}
             onChange={handleChange}
