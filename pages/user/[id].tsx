@@ -35,6 +35,7 @@ const User: NextPage = ({ data }: any) => {
           width={250}
           height={250}
           className="rounded-lg shadow-lg"
+          priority
         />
       </div>
       <div className="flex justify-center items-center">
