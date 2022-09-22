@@ -29,7 +29,7 @@ const UserSearch = (): JSX.Element => {
   return (
     <div className="flex flex-col justify-center items-center">
       <div className="container flex justify-center items-center px-4 sm:px-6 lg:px-8 mt-4">
-        <form onSubmit={handleSubmit}>
+        <form className="flex" onSubmit={handleSubmit}>
           <input
             type="text"
             className="h-14 sm:w-96 w-72 pr-8 pl-5 rounded z-0 shadow-md focus:outline-none dark:bg-gray-800"

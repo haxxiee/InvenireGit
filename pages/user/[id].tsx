@@ -33,7 +33,7 @@ const User: NextPage = ({ data }: any) => {
         />
       </div>
       <div className="flex justify-center items-center">
-        <h1 className="text-5xl font-bold m-2">{data.login}</h1>
+        <h1 className="md:text-5xl text-3xl font-bold m-2">{data.login}</h1>
         <span className="bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-900">
           {data.type}
         </span>
