@@ -1,5 +1,6 @@
-import { GetServerSideProps } from "next";
 import type { NextPage } from "next";
+import Head from "next/head";
+import { GetServerSideProps } from "next";
 import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -23,6 +24,10 @@ const User: NextPage = ({ data }: any) => {
 
   return (
     <div className="flex flex-col justify-center items-center mt-56 dark:text-gray-300">
+      <Head>
+        <title>{data.login} - InvenireGit</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <div className="mb-3 rounded-full w-56 h-56 shadow-lg overflow-hidden">
         <Image
           alt="github profile avatar"

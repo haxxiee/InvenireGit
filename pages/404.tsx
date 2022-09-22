@@ -1,9 +1,14 @@
 import type { NextPage } from "next";
+import Head from "next/head";
 import Link from "next/link";
 
 const NotFound: NextPage = () => {
   return (
     <div className="flex flex-col items-center justify-center flex-grow">
+      <Head>
+        <title>404 - InvenireGit</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <h2 className="text-3xl">Page not found</h2>
       <p className="mb-4">It appears this page doesn&apos;t exist yet.</p>
       <Link href="/" passHref>

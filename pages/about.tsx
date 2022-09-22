@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import Head from "next/head";
 import { TbBrandNextjs, TbBrandTailwind } from "react-icons/tb";
 import { FaReact } from "react-icons/fa";
 import { SiRedux } from "react-icons/si";
@@ -6,6 +7,10 @@ import { SiRedux } from "react-icons/si";
 const About: NextPage = () => {
   return (
     <main className="flex flex-col justify-center items-center my-auto text-center dark:text-gray-300">
+      <Head>
+        <title>About - InvenireGit</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <h1 className="text-6xl font-semibold p-4">InvenireGit</h1>
       <p className="text-xl">
         A NextJS app to search GitHub profiles and see profile details.
