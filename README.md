@@ -1,13 +1,18 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+### InvenireGit
 
-## Getting Started
+This is a NextJS app to search for GitHub profiles and see profile details.
 
-First, run the development server:
+The app fetches data from GitHubs own API and lays the data out in a user friendly way.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+[LIVE](https://invenire-git.vercel.app/)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### :closed_book: Project
+
+This project was a way for me to learn a few new technologies and frameworks that I have been intrested in for a while.
+
+### :hammer: Built using
+
+- NextJS
+- Redux Toolkid
+- Tailwind
+- GitHub Api

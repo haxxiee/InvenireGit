@@ -138,7 +138,7 @@ const User: NextPage = ({ data }: any) => {
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_GITHUB_USER_URL}${context.params?.id}`,
+    `${process.env.NEXT_PUBLIC_GITHUB_URL}/user/${context.params?.id}`,
     {
       headers: {
         Authorization: `token ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`,
